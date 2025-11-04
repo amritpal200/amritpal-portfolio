@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amritpal Singh – AI / Computer Vision</title>
+  <meta name="description" content="Amritpal Singh – AI Research Intern at CVC working on multimodal Vision‑Language Models (VLMs) and XAI." />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Amritpal Singh – AI / Computer Vision" />
+  <meta property="og:description" content="AI Research Intern at CVC working on multimodal VLMs and XAI." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0d10; /* near-black */
+      --card: #11151a; /* dark slate */
+      --muted: #a7b0ba;
+      --text: #e7ecf2;
+      --accent: #58a6ff; /* blue */
+      --accent2: #8b5cf6; /* violet */
+      --chip: #1b2128;
+      --border: #232a33;
+      --link: #9cd2ff;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(88,166,255,0.15), transparent 60%),
+                  radial-gradient(900px 600px at -10% 20%, rgba(139,92,246,0.12), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(11,13,16,0.6); border-bottom: 1px solid var(--border); z-index: 50; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.2px; }
+    .brand .dot { width: 10px; height: 10px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border-radius: 50%; box-shadow: 0 0 18px rgba(88,166,255,0.6); }
+    nav a { margin: 0 10px; font-weight: 500; color: var(--muted); }
+    nav a.active, nav a:hover { color: var(--text); }
+    .cta { display: inline-block; padding: 10px 16px; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #02040a; font-weight: 700; border: 0; }
+    .cta:hover { filter: brightness(1.05); text-decoration: none; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; padding: 48px 0 16px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 46px); line-height: 1.1; margin: 0 0 12px; }
+    .subtitle { font-size: 18px; color: var(--muted); max-width: 60ch; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+    .chip { padding: 8px 12px; border: 1px solid var(--border); background: var(--chip); border-radius: 999px; font-size: 13px; color: #d6deea; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)); border: 1px solid var(--border); padding: 22px; border-radius: 20px; box-shadow: 0 6px 30px rgba(0,0,0,0.35); }
+    .hero-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .hero-item { background: var(--card); border: 1px solid var(--border); padding: 16px; border-radius: 14px; }
+    .hero-item h3 { margin: 0 0 6px; font-size: 13px; color: var(--muted); font-weight: 600; }
+    .hero-item p { margin: 0; font-weight: 700; }
+
+    /* Sections */
+    section { padding: 24px 0; }
+    .section-title { font-size: 22px; margin: 12px 0 8px; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+
+    /* Experience / Education */
+    .timeline { display: grid; gap: 14px; }
+    .item { display: grid; grid-template-columns: 1fr auto; gap: 6px; padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: #0e1318; }
+    .item h4 { margin: 0; font-size: 16px; }
+    .item .meta { color: var(--muted); font-size: 13px; }
+
+    /* Lists */
+    .list-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    /* Footer */
+    footer { margin: 40px 0 24px; color: var(--muted); font-size: 14px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 620px) {
+      nav { display: none; }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot"></span> Amritpal Singh</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- <a class="cta" href="CV.pdf" target="_blank" rel="noopener">Download CV</a> -->
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <div>
+        <h1>AI Research Intern @ CVC • Multimodal VLMs & XAI</h1>
+        <p class="subtitle">
+            I’m an Artificial Intelligence Engineering student at the Autonomous University of Barcelona (UAB) and a Research Intern at the 
+            <a href="https://www.cvc.uab.es/" target="_blank" rel="noopener">Computer Vision Center (CVC)</a>. 
+            My work focuses on <strong>multimodal Vision-Language Models (VLMs)</strong> and <strong>Explainable AI</strong> for deep vision systems. 
+            I currently hold a <strong>GPA of 8.83</strong>, ranking within the <strong>top 5%</strong> of my promotion.
+        </p>
+        <div class="chips">
+          <span class="chip">Computer Vision</span>
+          <span class="chip">VLMs</span>
+          <span class="chip">XAI</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">Python</span>
+          <span class="chip">Git</span>
+          <span class="chip">AWS</span>
+        </div>
+
+      </div>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="hero-item">
+            <h3>Location</h3>
+            <p>Vic, Barcelona, Spain</p>
+          </div>
+          <div class="hero-item">
+            <h3>Email</h3>
+            <p><a href="mailto:amritcheema0081@gmail.com">amritcheema0081<br>@gmail.com</a></p>
+          </div>
+          <div class="hero-item">
+            <h3>Current role</h3>
+            <p>AI Research Intern – CVC</p>
+          </div>
+          <div class="hero-item">
+            <h3>Focus</h3>
+            <p>Multimodal VLMs, XAI</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / EDUCATION -->
+    <section class="grid" id="experience">
+      <div class="card" style="grid-column: span 7;">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="item">
+            <div>
+              <h4>AI Research Intern – Computer Vision Center (CVC)</h4>
+              <div class="meta">Jan 2025 – Present • Barcelona, Spain</div>
+              <p>
+                Researching <strong>Multimodal Vision-Language Models</strong> and <strong>Explainable AI</strong>. 
+                Building deep models in <strong>PyTorch</strong> and fine-tuning VLMs.
+                </p>
+            </div>
+            <div>
+              <a href="https://www.cvc.uab.es/" class="cta" target="_blank" rel="noopener" style="padding:8px 12px;font-size:13px;">CVC</a>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <h4>PLC Programmer – Electro‑Jet</h4>
+              <div class="meta">2021 – 2022</div>
+              <p>Designed electrical schematics and implemented <strong>PLC</strong> control logic for custom textile‑industry machinery.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <h4>Electrician – TEQ Girona</h4>
+              <div class="meta">2019 – 2020</div>
+              <p>Assembled and wired industrial electrical panels for hotels and factories.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" id="education" style="grid-column: span 5;">
+        <h2 class="section-title">Education</h2>
+        <div class="timeline">
+          <div class="item">
+            <div>
+              <h4>Autonomous University of Barcelona (UAB)</h4>
+              <div class="meta">B.Eng. Artificial Intelligence Engineering • 2022 – Present</div>
+              <p>Relevant modules: Machine Learning, Deep Learning, Computer Vision, NLP, Cloud Computing.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <h4>Institut de Vic</h4>
+              <div class="meta">Higher Vocational Diploma in Industrial Automation & Robotics • 2020 – 2022</div>
+              <p>Honors with Distinction.</p>
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <h4>Institut de Vic</h4>
+              <div class="meta">Intermediate Vocational Diploma in Electrical Installations & Automation • 2018 – 2020</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS / LANGUAGES -->
+    <section class="grid" id="skills">
+      <div class="card" style="grid-column: span 7;">
+        <h2 class="section-title">Skills</h2>
+        <div class="list-chips">
+          <span class="chip">PyTorch</span>
+          <span class="chip">Python</span>
+          <span class="chip">Computer Vision</span>
+          <span class="chip">NLP</span>
+          <span class="chip">Vision‑Language Models</span>
+          <span class="chip">Explainable AI</span>
+          <span class="chip">Git</span>
+          <span class="chip">AWS</span>
+          <span class="chip">PLC Programming</span>
+          <span class="chip">Ladder Logic</span>
+          <span class="chip">Electrical Systems</span>
+        </div>
+      </div>
+      <div class="card" style="grid-column: span 5;">
+        <h2 class="section-title">Languages</h2>
+        <div class="list-chips">
+          <span class="chip">English – Advanced</span>
+          <span class="chip">Catalan – Advanced</span>
+          <span class="chip">Spanish – Intermediate</span>
+          <span class="chip">Punjabi – Native</span>
+          <span class="chip">Hindi – Native</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="card">
+        <h2 class="section-title">Contact</h2>
+        <p>Open to research collaborations and internships in Computer Vision, VLMs, and XAI.</p>
+        <div class="list-chips">
+          <a class="chip" href="mailto:amritcheema0081@gmail.com">Email</a>
+          <a class="chip" href="https://www.linkedin.com/in/amritpal-singh-5499b41a1" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+          <a class="chip" href="https://github.com/amritpal200" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+          <!-- <a class="chip" href="CV.pdf" target="_blank" rel="noopener" aria-label="CV">CV (PDF)</a> -->
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="padding:0;">
+        © <span id="year"></span> Amritpal Singh.
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('header nav a');
+    const map = {}; links.forEach(a => map[a.getAttribute('href').slice(1)] = a);
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(a => a.classList.remove('active'));
+          const id = e.target.getAttribute('id');
+          if (map[id]) map[id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+    sections.forEach(s => io.observe(s));
+  </script>
+</body>
+</html>
